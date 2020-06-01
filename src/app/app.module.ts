@@ -1,13 +1,9 @@
-// import { BrowserModule } from '@angular/platform-browser';
-// import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-
-//import {NgxPaginationModule} from 'ngx-pagination'; // https://www.npmjs.com/package/ngx-pagination
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,8 +23,6 @@ import { AboutComponent } from './components/about/about.component';
     AboutComponent
   ],
   imports: [
-    //BrowserModule,
-    //AppRoutingModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
