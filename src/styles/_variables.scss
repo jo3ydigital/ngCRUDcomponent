@@ -1,0 +1,30 @@
+//== Paths (bootstrap)
+//$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+//== Breakpoints
+$desktop: '960px';
+$tablet: '768px';
+$mobile-large: '640px';
+$mobile: '480px';
+$mobile-small: '300px';
+
+//== Breakpoints (bootstrap)
+$mobile-small: '300px';
+$mobile: '480px';
+$mobile-large: '640px';
+$tablet: '768px';
+$desktop: '960px';
+
+//== Breakpoints (include-media)
+$phone-small: 300px;
+$phone-standard: 480px;
+$phone: 640px; //'phone': 320px,
+$tablet: 768px;
+$desktop: 1024px;
+$widescreen: 1200px;
+
+//== Common
+$brand-primary: red;
+
+//== Test
+$testColor: blue;

@@ -1,0 +1,54 @@
+<div id="top" class="wrapper">
+
+  <div class="row center">
+    <h2 class="page-heading">Superheroes CRUD Component<span>with search, pagination and sort</span><span>*as seen on tv (only in alternate universes)</span></h2>
+    <div class="page-divider"></div>
+  </div>
+
+  <div class="wrapper-inner">
+    <h3>What is this CRUD component?</h3>
+    <!-- <p>Hopefully by now, everyone knows what a component is. The acronym CRUD stands for <b>C</b>reate <b>R</b>ead <b>U</b>pdate and <b>D</b>elete. This CRUD component actually updates a MySQL database by calling functions in an API that I wrote in PHP.</p> -->
+
+    <!-- <p>Hopefully by now, everyone knows what a component is. I created this code demo app in <b>Angular 8</b>, which obviously contains this "superheroes" CRUD component. The acronym <b>CRUD</b> (Create Read Update and Delete) usually pertains to manipulating information that resides somewhere in a database. This particular CRUD component modifies a MySQL database by calling functions in an API that I wrote in PHP. You can view a live, working example by clicking (or tapping if you're viewing this page on a mobile device) <b><a routerLink="/superheroes">here</a></b>, or by selecting the "<b>superheroes demo</b>" link in the main navigation at the top of this page.</p> -->
+    <p>This is a real-time CRUD (Create, Read, Update and Delete) app that I wrote (in Angular 8) which talks to a live database. I didn't use any plugins or npm packages for any of this stuff - I wrote everything entirely from scratch, including the API (which I wrote in PHP). I used MySQL for the database and Krispy Kreme donuts for my sweet-tooth. You can view a live, working example <b><a routerLink="/superheroes">here</a></b>, or by selecting the "<b>superheroes demo</b>" link in the main navigation at the top of this page.</p>
+
+    <div class="page-divider"></div>
+    <h3>Things to Know About</h3>
+    <!-- <h3>Things you should know about this superheroes demo</h3> -->
+    <!-- <h3>Important things you should know about this superheroes demo</h3> -->
+    <!-- <p>The first thing that you may notice is that the superhero cards or tiles (or whatever you want to call them - we'll call them superhero objects) are not ordered by name. Instead, they are ordered by the most recent ones that have been created. I did this to ensure that when a user creates a new superhero object, it will appear first in the list (immediately). Also, if a user edits a superhero object's name, it will stay put only if these objects are ordered by the most recent ones first. Otherwise, the edited superhero object may move around in the list accordingly, in order to preserve it's order (alphabetically). As a result, it may look strange if you edited a superhero object's name (for example, if you renamed Wolverine to Batman) and the object "vanished" - it wouldn't actually vanish, it would just move down in the list, but it may appear to have vanished.</p> -->
+    <p>The first thing that you may notice is that the superhero cards or tiles (or whatever you want to call them - we'll call them superhero objects) are displayed, or <i>ordered by</i> name when they first appear. If you create a new superhero object, the app will automatically re-order the superhero objects by the most recent ones first to ensure that you see the new object that you just created. Otherwise, you may not see your newly created object if you gave it a name starting with the letter "z". I hope this makes sense...</p>
+
+    <p>You will also notice that each superhero object has buttons on them that allow you to "edit" or "delete" them. Some of these superhero objects (the ones that I created) do not allow you to "edit" or "delete" them, which is why they are grayed-out. The reason that I did this was to ensure that everyone will be able to actually see something, just in case some [malicious] user decides to delete all of the superhero objects. After all, nobody wants to see a blank page starring back at them, do they?</p>
+    
+    <p>One more thing that I should point out. Concerning the image, you must paste a URL that points to an image (online) instead of uploading one from your HD (like I had originally intended - I didn't want a bunch of images cluttering up my server, or have to create a CRON job to delete them after X amount of time, etc.). Anyway, your image (URL) should automatically resize to fit the superhero object's container, no matter what size it is. However, when pasting an image URL into a superhero object, it is a good idea to make sure that your image is as close to 200 x 200 pixels as possible (for best results).</p>
+
+    <!-- <p>One more thing that I should point out. Your image should auto resize to fit the superhero object's container, no matter what size it is. However, when pasting an image URL into a superhero object, it is a good idea to make sure that your image is as close to 200x200 pixels. I know what you're thinking - Enough already! Take me to the live, <b><a routerLink="/superheroes">working example</a></b>!</p> -->
+
+    <!-- <p>Enough already! Take me to the live, <b><a routerLink="/superheroes">working example</a></b></p> -->
+
+    <!-- <div class="page-divider"></div>
+    <h3>The CSS</h3>
+    <p class="normal">I actually created this CRUD component way back in Angular 2 or 4 - it was a while ago, so I don't really remember which version of Angular it was. Anyway, this was back when Bootstrap was in its 3rd version, so rather than re-invent the wheel here, I just stuck with this version since the work was already done.</p>
+    
+    <p class="normal">Anyway, here's how I did it:<br>First, I just ran: <b>npm install bootstrap@3</b>.<br>Next, I went into the main <b>styles.scss</b> (or you could use styles.css)<br>...and pointed to Bootstrap's minified css file by putting this line at the top of the file:<br><b>@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';</b></p>
+
+    <p class="normal">If I ever get some free time (yeah, right - I've been after the elusive "free time" thing forever and I'm beginning to think that there's no such thing), I will re-do the CSS with flexbox or grid. This is really the way it should be done in my opinion. CSS frameworks are great to use in order to save some time (especially if you're in a pinch), but I prefer to create the CSS (scss) on my own whenever possible.</p> -->
+
+    <div class="page-divider"></div>
+    <h3>Final Thoughts</h3>
+    <!-- <p class="bott">There are clearly way more things that I want to discuss here, such as the search functionality, the pagination functionality, the PHP API's (there are actually 2 of them - one for the CRUD functionality, and another one for the search functionality), as well as a ton of other things pertaining to Angular, such as the services, pipes, etc. that I created. I would love to talk about everything that I did and explain all of the steps that I took to build something like this, as I'm sure it could potentially help somebody else out there. Time permitting, I really plan on elaborating on all of these things this soon. This stuff really is so much fun to create and talk about, especially if it can help someone learn something and have as much fun as me. Until then, happy coding :)</p> -->
+    <!-- <p class="bott">There are clearly way more things that I want to discuss here, such as the search functionality, the pagination functionality, the PHP API, as well as a ton of other things pertaining to Angular, such as the services, pipes, etc. that I created. I would love to talk about everything in detail and explain all of the steps that I took to build something like this, as I'm sure it could potentially help somebody else out there. Time permitting, I really plan on elaborating on all of these things this soon. This stuff really is so much fun to create and talk about, especially if it can help someone learn something and have as much fun as me. Until then, happy coding :)</p> -->
+    <p class="bott">There are clearly way more things that I want to discuss here, such as the search functionality, the pagination functionality, the sort functionality, the PHP API, as well as a ton of other things pertaining to Angular, such as the services, pipes, etc. that I created. I would certainly love to talk about everything in more detail and explain all of the steps that I took to build something like this, as I'm sure it could potentially help somebody else out there. Time permitting, I really plan on elaborating on all of these things soon. This stuff really is a ton of fun for me to create and talk about, especially if it can help others learn something and have as much fun as me. Until then, happy coding :)</p>
+
+    <!-- <div class="page-divider"></div>
+    <h3>The search functionality</h3>
+    <p></p>
+    
+    <div class="page-divider"></div>
+    <h3>The pagination functionality</h3>
+    <p></p> -->
+  </div>
+
+  <app-footer></app-footer>
+</div>

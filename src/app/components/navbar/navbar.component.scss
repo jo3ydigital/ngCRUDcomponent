@@ -1,0 +1,290 @@
+// @import '../../variables';
+//@import '../../../styles/variables';
+
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/include-media';
+//@import "../../../environments/environment.scss";
+$css-base-path: '/assets';
+
+@font-face {
+  font-family: 'Digital dream';
+  src: url($css-base-path+'/fonts/digital-dream/Digitaldream.woff2') format('woff2'),
+      url($css-base-path+'/fonts/digital-dream/Digitaldream.woff') format('woff'),
+      url($css-base-path+'/fonts/digital-dream/Digitaldream.ttf') format('truetype'),
+      url($css-base-path+'/fonts/digital-dream/Digitaldream.svg#Digitaldream') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '01 Digit';
+  src: url($css-base-path+'/fonts/01-digit/01Digit.woff2') format('woff2'),
+      url($css-base-path+'/fonts/01-digit/01Digit.woff') format('woff'),
+      url($css-base-path+'/fonts/01-digit/01Digit.ttf') format('truetype'),
+      url($css-base-path+'/fonts/01-digit/01Digit.svg#01Digit') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Digital-7 Mono';
+  src: url($css-base-path+'/fonts/digital-7/Digital-7Mono.woff2') format('woff2'),
+      url($css-base-path+'/fonts/digital-7/Digital-7Mono.woff') format('woff'),
+      url($css-base-path+'/fonts/digital-7/Digital-7Mono.ttf') format('truetype'),
+      url($css-base-path+'/fonts/digital-7/Digital-7Mono.svg#Digital-7Mono') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Color Variables
+$color1: #999; //$color1: #FF9900; //Orange
+$color2: #000; //Black
+$color3: #FF9900; //Maroon
+$color4: #54C5F3;
+$white: #FFF;
+
+h1 {
+  font-size: 3em;
+  padding: 3em 0 1em 0;
+}
+
+.navBar {
+  background-color: $color2;
+  position: fixed;
+  z-index: 1000;
+  min-width: 100%;
+  padding: .5em 0;//padding: 1.0em 0; //margin: 1em 0;
+
+  //== Mobile
+  @media (max-width: 768px) {
+    //padding: 15px 0px;
+  }
+  @include media('<tablet') {
+    padding: 15px 15px 5px 0px; padding: 7px 15px 5px 0px;
+  }
+
+  //border-bottom: 1px solid $dark-gray;
+  // @include box-shadow(0px 1px 1px 1px rgba(204, 204, 204, 0.4)); //h-offset, v0offset, blur, spread, color
+  // @include box-shadow(0px 1px 1px 1px rgba(0, 0, 0, 0.4)); //h-offset, v0offset, blur, spread, color
+  // @include box-shadow(0px 1px 20px 10px rgba(43, 198, 240, 0.4)); //h-offset, v0offset, blur, spread, color
+
+  &.drop-light {
+    @include box-shadow(0px 1px 20px 10px rgba(204, 204, 204, 0.9)); //h-offset, v0offset, blur, spread, color
+  }
+  &.drop-blue {
+    @include box-shadow(0px 1px 20px 2px rgba(43, 198, 240, 0.4)); //h-offset, v0offset, blur, spread, color
+  }
+  &.drop-orange {
+    @include box-shadow(0px 1px 20px 2px rgba(255, 151, 42, 0.9)); //h-offset, v0offset, blur, spread, color
+  }
+  
+}
+
+.logo-container {
+  @include flexbox();
+  cursor: pointer;
+  border: none !important;
+  max-width: 250px;
+}
+.space-invader {
+  background-image: url($css-base-path+'/images/space-invader.png');
+  width: 29px; height: 21px;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  display: inline-block;
+
+  @media screen and (min-width: 0px) and (max-width: 320px) {
+    display: none;
+  }
+}
+
+.logo {
+  display: inline-block;
+  font-family: '01 Digit'; //font-family: 'Digital dream'; //font-family: 'Digital-7';
+  font-size: 1.9em; //font-size: 2.5em; //font-size: 1.8em;
+  letter-spacing: 2px;
+  color: #FF9900;
+
+  span {
+    color: #54C5F3;
+    &.curly {
+      display: none;
+      font-family: 'Digital dream';
+      color: #FFF;
+      &:first-of-type { margin-right: 5px; }
+      &:last-of-type { margin-left: 5px; }
+    }
+  }
+}
+
+// Content Wrapper
+.wrapper {
+  margin: 0 auto;
+  max-width: 1170px; //max-width: 1024px; //max-width: 960px;
+  padding: 0 2%; //padding: 0 2%;
+}
+
+// Full Navigation, including mobile menu
+nav {
+  ul {
+    @include flexbox();
+    @include justify-content(space-between);
+
+    list-style-type: none;
+    width: 65%; //width: 50%;
+    margin-top:5px;
+    
+    a {
+      cursor: pointer;
+      color: $color1;
+      text-decoration: none;
+      font-family: '01 Digit'; //font-family: 'Digital dream';
+      font-size: 1.8em; //font-size: 18px; font-size: 1.5em;
+      outline: none;
+
+      @include transition(all .5s ease); //transition: all .5s ease;
+
+      // TABLET (landscape)
+      // @media screen and (max-width: 1080px) and (orientation: landscape) {
+      @media screen and (max-width: 1080px) {
+        font-size: 1.3em;
+      }
+
+      &:hover { color: $color4; outline: none; }
+      &.active { color: #FFF; outline: none; }
+      &:focus { outline: none; }
+    }
+  }
+  
+  li  {
+    display: inline-block;
+    outline: none;
+  }
+  
+  //== Hamburger Menu
+  #menu-toggle { display: none; }
+  .label-toggle { display: none; }
+
+  //== Hamburger Menu (bars)
+  .label-toggle span {
+    display: block;
+    position: absolute;
+    width: 35px; height: 2px;
+    background: #FFF;
+    border-radius: 9px;
+    opacity: 1;
+
+    // @include media('<tablet') {
+    //   margin-left: -5px;
+    // }
+
+    @include transform(rotate(0deg));
+    @include transition(.25s ease-in-out);
+
+    &:nth-child(1) {
+      @include transform-origin(center);
+      margin-top: -1px;
+    }
+    
+    &:nth-child(2) {
+      @include transform-origin(center);
+      margin-top: 8px;
+    }
+    
+    &:nth-child(3) {
+      @include transform-origin(center);
+      margin-top: 17px;
+    }
+
+  }
+
+  //== Hamburger Menu (Animation)
+  .label-toggle.open {
+    span:nth-child(1), span:nth-child(3) {
+      width: 29px;
+      margin-top: 8px;
+    }
+    
+    span:nth-child(1) {
+      @include transform(rotate(45deg));
+    }
+    
+    span:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      @include transform(rotate(-45deg));
+    }
+
+  }
+
+  .wrapper {
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+  
+  @media (max-width: 768px) {
+  // @media screen and (max-width: 768px) {
+    nav {
+      //margin-bottom: -20px !important;
+      ul {
+        margin-bottom: -20px !important;
+        a {
+          color: $color2; //color: $color2;
+          &.active { color: #FFF; }
+        }
+      }
+    }
+    ul {
+      background-color: #000;
+      display: block;
+      height: 0;
+      list-style-type: none;
+      opacity: 0;
+      text-align: center;
+      @include transition(all .4s ease);
+      width: 100%;
+      visibility: hidden;
+      padding-top: 15px;
+    }
+    
+    li {
+      border: none;
+      color: $color2;
+      display: block;
+      font-size: 1.5em;
+      padding: 2em 0;
+      opacity: 0;
+      background-color: #fff;
+      &.active { background-color: $color3; }
+
+      padding: 1em 0;
+    }
+    li { border-bottom: 2px solid $color2; }
+  
+    //== Hamburger
+    .label-toggle {
+      cursor: pointer;
+      display: block;
+      float: right;
+      height: 30px;
+      width: 35px;
+      margin-top: -20px; margin-top: -30px;
+    }
+    #menu-toggle:checked ~ ul {
+      opacity: 1;
+      height: 100vh;
+      visibility: visible;
+    }
+    #menu-toggle:checked ~ ul li {
+      opacity: 1;
+      @include transition(all 1.8s ease);
+    }
+    
+    .wrapper { display: block; }
+  }
+
+}

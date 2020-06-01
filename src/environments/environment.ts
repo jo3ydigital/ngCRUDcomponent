@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  base_url: 'http://localhost:8080/jd/examplescrud-superheroes',
+  css_base_path: 'http://localhost:8080/jd/examples/crud-superheroes/assets', 
+  api_endpoint_crud: 'http://localhost:8080/jd/examples/crud-superheroes-php/crud/index.php',
+  api_endpoint_search: 'http://localhost:8080/jd/examples/crud-superheroes-php/search/index.php'
 };
 
 /*
