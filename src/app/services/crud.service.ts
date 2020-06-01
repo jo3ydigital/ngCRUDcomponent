@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import {map, catchError, retry} from "rxjs/operators";
 import { Observable, throwError } from 'rxjs';
@@ -15,27 +14,7 @@ export class CrudService {
   private API_ENDPOINT = environment.api_endpoint_crud; //private API_ENDPOINT = 'http://localhost:8080/jd/examples/crud-superheroes-php/crud/index.php';
   private API_KEY = "jdr9175wz";
 
-  //constructor(private http: Http) {}
   constructor(private http: HttpClient) {}
-
-  //== Add headers to JSON
-	// addHeaders() {
-  //   let headers = new Headers({ 'Content-Type': 'application/json' });
-  //   headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
-  //   let options = new RequestOptions({ headers: headers });
-  //   return options;
-  // }
-  // addHeaders() {
-  //   let headers = new HttpHeaders({
-  //     'Content-Type': 'application/json'
-  //   });
-  //   //headers = headers.set('Access-Control-Allow-Origin', '192.168.0.10:4200');
-  //   //headers = headers.set('Access-Control-Allow-Origin', 'http://localhost:4200');
-  //   let options = {
-  //     headers: headers
-  //   }
-  //   return options;
-  // }
   
   //== Add node to JSON (readData & updateData)
   addNode(key, value) {
@@ -73,13 +52,9 @@ export class CrudService {
   
   //== Create
   createData(data: any): Observable<any> {
-    let body = this.createBody(data, 'create', '');  // create the JSON body
-    //let options = this.addHeaders();                 // add HEADERS (options) to request
+    let body = this.createBody(data, 'create', '');
 
-    //console.log('NG SERVICE: '+body);
-    return this.http.post(this.API_ENDPOINT, body) //return this.http.post(this.API_ENDPOINT, body, options)
-      // .map((res: Response) => res.json())
-      // .catch(this.handleError);
+    return this.http.post(this.API_ENDPOINT, body)
       .pipe(
         map((res:Response) => res),
         catchError((res:Response) => throwError(this.handleError(res)))
@@ -90,7 +65,7 @@ export class CrudService {
   readDataSort(data: any): Observable<any> {
     let body = this.createBody(data, 'readSort', '');
 
-    return this.http.post(this.API_ENDPOINT, body) //return this.http.post(this.API_ENDPOINT, body, options)
+    return this.http.post(this.API_ENDPOINT, body)
     .pipe(
       map((res:Response) => res),
       catchError((res:Response) => throwError(this.handleError(res)))
@@ -101,34 +76,20 @@ export class CrudService {
   readData(id: number): Observable<any> {
     let body = this.createBody('', 'read', id);
 
-    return this.http.post(this.API_ENDPOINT, body) //return this.http.post(this.API_ENDPOINT, body, options)
+    return this.http.post(this.API_ENDPOINT, body)
     .pipe(
       map((res:Response) => res),
       catchError((res:Response) => throwError(this.handleError(res)))
     );
   }
 
-  //== Update
-  // updateData(data: any, id: any): Promise<any> {
-  //   let body = this.createBody(data, 'update', id);
-  //   //let returnVal = Promise.resolve(this.http.post(this.API_ENDPOINT, body));
-  //   let returnVal = Promise.resolve(this.http.post(this.API_ENDPOINT, body));
-  //   return returnVal;
-  // }
-
   updateData(data: any, id: number) {
     let body = this.createBody(data, 'update', id);
 
-    //return this.http.post<any>(this.API_ENDPOINT, body)
     return this.http.post(this.API_ENDPOINT, body)
     .pipe(
-      // tap( // Log the result or error
-      //   data => this.log(filename, data),
-      //   error => this.logError(filename, error)
-      // ),
-      //retry(3), // retry a failed request up to 3 times
       map((res:Response) => res),
-      catchError((res:Response) => throwError(this.handleError(res))) // then handle the error
+      catchError((res:Response) => throwError(this.handleError(res)))
     );
   }
 
@@ -136,7 +97,7 @@ export class CrudService {
   deleteData(id: number): Observable<any> {
     let body = this.createBody('', 'delete', id);
 
-    return this.http.post(this.API_ENDPOINT, body) //return this.http.post(this.API_ENDPOINT, body, options)
+    return this.http.post(this.API_ENDPOINT, body)
     .pipe(
       map((res:Response) => res),
       catchError((res:Response) => throwError(this.handleError(res)))
@@ -144,19 +105,6 @@ export class CrudService {
   }
 
   handleError(error) {
-    // console.log('SERVER ERROR FROM API: '+JSON.stringify(error));
-    // if (error.error instanceof ErrorEvent) {
-    //   // A client-side or network error occurred. Handle it accordingly.
-    //   console.error('An error occurred:', error.error.message);
-    // } else {
-    //   // The backend returned an unsuccessful response code.
-    //   // The response body may contain clues as to what went wrong,
-    //   // console.error(
-    //   //   `Backend returned code ${error.status}, ` +
-    //   //   `body was: ${error.error}`);
-    //   console.error(`Backend returned code ${error.status}, `);
-    //   console.error('body was: '+JSON.stringify(error.error));
-    // }
     return throwError('service error returned from api: '+error); //return throwError(error || 'Server error');
   }
 
