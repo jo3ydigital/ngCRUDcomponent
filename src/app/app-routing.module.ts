@@ -8,8 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/superheroes', pathMatch: 'full' },
   { path: 'superheroes', component: SuperheroesComponent },
   { path: 'about', component: AboutComponent }
-  //== DEFAULT
-  //{ path: '**', component: NotfoundComponent, data: {title: 'Joey Digital - Error 404'} }
 ];
 
 @NgModule({
