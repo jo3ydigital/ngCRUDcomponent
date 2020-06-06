@@ -1,10 +1,6 @@
-// @import '../../variables';
-//@import '../../../styles/variables';
-
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 @import '../../../styles/include-media';
-//@import "../../../environments/environment.scss";
 $css-base-path: '/assets';
 
 @font-face {
@@ -54,7 +50,7 @@ h1 {
   position: fixed;
   z-index: 1000;
   min-width: 100%;
-  padding: .5em 0;//padding: 1.0em 0; //margin: 1em 0;
+  padding: .5em 0;
 
   //== Mobile
   @media (max-width: 768px) {
@@ -63,11 +59,6 @@ h1 {
   @include media('<tablet') {
     padding: 15px 15px 5px 0px; padding: 7px 15px 5px 0px;
   }
-
-  //border-bottom: 1px solid $dark-gray;
-  // @include box-shadow(0px 1px 1px 1px rgba(204, 204, 204, 0.4)); //h-offset, v0offset, blur, spread, color
-  // @include box-shadow(0px 1px 1px 1px rgba(0, 0, 0, 0.4)); //h-offset, v0offset, blur, spread, color
-  // @include box-shadow(0px 1px 20px 10px rgba(43, 198, 240, 0.4)); //h-offset, v0offset, blur, spread, color
 
   &.drop-light {
     @include box-shadow(0px 1px 20px 10px rgba(204, 204, 204, 0.9)); //h-offset, v0offset, blur, spread, color
@@ -101,8 +92,8 @@ h1 {
 
 .logo {
   display: inline-block;
-  font-family: '01 Digit'; //font-family: 'Digital dream'; //font-family: 'Digital-7';
-  font-size: 1.9em; //font-size: 2.5em; //font-size: 1.8em;
+  font-family: '01 Digit';
+  font-size: 1.9em;
   letter-spacing: 2px;
   color: #FF9900;
 
@@ -121,8 +112,8 @@ h1 {
 // Content Wrapper
 .wrapper {
   margin: 0 auto;
-  max-width: 1170px; //max-width: 1024px; //max-width: 960px;
-  padding: 0 2%; //padding: 0 2%;
+  max-width: 1170px;
+  padding: 0 2%;
 }
 
 // Full Navigation, including mobile menu
@@ -132,21 +123,20 @@ nav {
     @include justify-content(space-between);
 
     list-style-type: none;
-    width: 65%; //width: 50%;
+    width: 65%;
     margin-top:5px;
     
     a {
       cursor: pointer;
       color: $color1;
       text-decoration: none;
-      font-family: '01 Digit'; //font-family: 'Digital dream';
-      font-size: 1.8em; //font-size: 18px; font-size: 1.5em;
+      font-family: '01 Digit';
+      font-size: 1.8em;
       outline: none;
 
-      @include transition(all .5s ease); //transition: all .5s ease;
+      @include transition(all .5s ease);
 
       // TABLET (landscape)
-      // @media screen and (max-width: 1080px) and (orientation: landscape) {
       @media screen and (max-width: 1080px) {
         font-size: 1.3em;
       }
@@ -174,10 +164,6 @@ nav {
     background: #FFF;
     border-radius: 9px;
     opacity: 1;
-
-    // @include media('<tablet') {
-    //   margin-left: -5px;
-    // }
 
     @include transform(rotate(0deg));
     @include transition(.25s ease-in-out);
@@ -227,13 +213,11 @@ nav {
   }
   
   @media (max-width: 768px) {
-  // @media screen and (max-width: 768px) {
     nav {
-      //margin-bottom: -20px !important;
       ul {
         margin-bottom: -20px !important;
         a {
-          color: $color2; //color: $color2;
+          color: $color2;
           &.active { color: #FFF; }
         }
       }
