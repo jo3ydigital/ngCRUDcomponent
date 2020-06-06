@@ -9,8 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SuperheroesComponent } from './components/superheroes/superheroes.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
-import { LoginService } from './services/login.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 
@@ -30,7 +28,7 @@ import { AboutComponent } from './components/about/about.component';
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [LoginService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
